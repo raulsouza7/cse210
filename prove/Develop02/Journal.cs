@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 public class Journal
 {
@@ -46,9 +47,26 @@ public class Journal
         }
     }
 
-        public void ClearAllEntries()
+    public void ClearAllEntries()
     {
         _entries.Clear();
         Console.WriteLine("All journal entries have been deleted.");
+    }
+
+    public void SearchEntries(string searchTerm)
+    {
+        var foundEntries = _entries.Where(entry => entry.Contains(searchTerm)).ToList();
+
+        if (foundEntries.Any())
+        {
+            foreach (var entry in foundEntries)
+            {
+                entry.Display();
+            }
+        }
+        else
+        {
+            Console.WriteLine("No entries found matching the search term.");
+        }
     }
 }

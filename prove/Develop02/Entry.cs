@@ -28,4 +28,9 @@ public class Entry
         var parts = data.Split('|');
         return new Entry(parts[0], parts[1], parts[2]);
     }
+        public bool Contains(string searchTerm)
+    {
+        return _entryText.Contains(searchTerm, StringComparison.OrdinalIgnoreCase) || 
+               _promptText.Contains(searchTerm, StringComparison.OrdinalIgnoreCase);
+    }
 }
