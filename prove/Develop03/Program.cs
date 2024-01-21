@@ -33,3 +33,5 @@ class Program
         Console.WriteLine("\nAll words are hidden. Program ended.");
     }
 }
+// Scripture Memorizer: Features random scripture selection from an external file and incremental word hiding for interactive memorization.
+// These enhancements provide a dynamic and engaging user experience, exceeding core project requirements.
